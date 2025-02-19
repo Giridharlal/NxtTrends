@@ -67,9 +67,11 @@ class App extends Component {
     this.setState(prevState => ({
       cartList: prevState.cartList
         .map(cartItem =>
-          cartItem.id === productId && cartItem.quantity > 1
-            ? {...cartItem, quantity: cartItem.quantity - 1}
-            : null,
+          cartItem.id === productId
+            ? cartItem.quantity > 1
+              ? {...cartItem, quantity: cartItem.quantity - 1}
+              : null
+            : cartItem,
         )
         .filter(cartItem => cartItem !== null),
     }))
