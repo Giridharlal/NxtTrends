@@ -17,11 +17,10 @@ const Header = props => {
       {value => {
         const {cartList} = value
         const cartItemsCount = cartList.length
-
         return (
           <>
             {cartItemsCount > 0 ? (
-              <span className="cart-count-badge">{cartList.length}</span>
+              <span className="cart-count-badge">{cartItemsCount}</span>
             ) : null}
           </>
         )
